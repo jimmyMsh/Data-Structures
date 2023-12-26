@@ -1,43 +1,38 @@
-## Project Overview
+## Summary
+**RU Hungry** is a comprehensive Java project that simulates the operations of a fictitious restaurant. The project utilizes various data structures, such as hash tables with separate chaining, arrays, and linked lists, to manage and execute tasks like handling a menu, managing stockroom and inventory, processing transactions, and managing the seating for guests. It demonstrates proficiency in object-oriented programming, data structure manipulation, and complex algorithmic logic.
 
-The Music Playlist project was designed to build a music streaming application in Java, which simulates functionalities similar to those found in apps like Spotify or Apple Music. It involved the implementation of circular linked lists, object-oriented programming (OOP) principles, file reading from CSV format, and the use of arrays to manage collections of data.
+## Data Structures and Concepts Utilized
+### Arrays and 2D Arrays
+Used to hold information on the menu categories and each table in the restaurant.
 
-### Skills Demonstrated
+### Hash Tables with Separate Chaining
+Employs a custom hash function for indexing and resolving collisions, maintaining stock availability, and transaction history.
 
-- Circular Linked List Manipulation
-- Object Referencing
-- CSV File Input/Output
-- Object-Oriented Programming
-- ArrayList Usage
+### Linked Lists
+Each category in the menu is represented by a linked list containing details about dishes available. The stock and transactions are also managed through linked lists to handle varying volumes of data dynamically.
 
-### Assignment Structure
+### Object-Oriented Programming
+The program is structured around objects representing restaurant entities, such as dishes, ingredients, stock items, and transactions, to facilitate easier management of related data and actions.
 
-The project is structured into the following main components:
+### Queue Data Structure
+Used to simulate a waiting line for restaurant seating, enabling the seating and removal of guest groups based on table availability.
 
-1. **Song Class**: This class encapsulates the metadata for a single song, such as title, artist, year, popularity, and a link to the audio file.
-   
-2. **PlaylistLibrary Class**: This is the central class of the application. It stores an ArrayList of `Playlist` objects, which represent users' music playlists. It provides methods for playlist management such as creating, adding, removing, reversing, merging, and shuffling playlists.
+## Features and Method Descriptions
+### Menu Management (`menu`)
+Creation and management of the restaurant's menu involving reading from a file, populating categories, and arranging dishes using linked lists within an array.
 
-3. **Driver**: A utility class that facilitates interactive testing of the `PlaylistLibrary` implementation. It is not part of the graded submission but is essential for development and debugging.
+### Stock Management (`addStockNode`, `deleteStockNode`, `findStockNode`, `updateStock`, `createStockHashTable`, `updatePriceAndProfit`)
+Enables the addition, deletion, updating, and searching of stock items in the restaurant’s inventory using hashtable methods. Responsible for adjusting prices and calculating profits based on cost and stock levels.
 
-4. **StdRandom and StdAudio**: Utility classes provided for shuffling playlists and playing songs, respectively.
+### Transaction Processing (`addTransactionNode`, `order`, `profit`, `donation`, `restock`)
+Handles different transactions, calculating profits and managing donations and restocking actions based on current profit levels and stock availability.
 
-5. **StdIn and StdOut**: Classes for handling file input and console output – are not to be modified.
 
-### Key Methods in PlaylistLibrary
+## Skills Demonstrated
+- Use of fundamental and advanced Java data structures.
+- Integration of various data structures to build a complex and robust application.
+- Debugging, testing, and validation of data using custom written code.
+- Reading from and writing to external files.
+- Execution of object-oriented programming principles such as encapsulation and abstraction.
 
-- `createPlayList(String filename)`: Parses a CSV file to create a single playlist.
-
-- `addPlaylist(String filename, int playlistIndex)`: Adds a playlist to the song library at a specified index—an implementation provided for this method.
-
-- `addAllPlaylists(String[] filenames)`: Accepts an array of CSV filenames and adds the corresponding playlists to the library.
-
-- `insertSong(int playlistIndex, int position, Song song)`: Inserts a song into a specified playlist at a given position.
-
-- `removeSong(int playlistIndex, Song song)`: Removes a song from a specified playlist if it exists.
-
-- `reversePlaylist(int playlistIndex)`: Reverses the order of songs in a specified playlist.
-
-- `mergePlaylists(int playlistIndex1, int playlistIndex2)`: Merges two playlists, maintaining songs in decreasing order of popularity.
-
-- `shufflePlaylist(int playlistIndex)`: Shuffles the songs in a specified playlist randomly.
+> Note: The class `RUHungry` is the central file where the described methods are implemented. Additional support files representing the various objects in use (e.g., `Dish`, `Ingredient`, `TransactionData`) accompany this class file to complete the project functionality.
